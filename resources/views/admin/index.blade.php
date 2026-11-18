@@ -29,7 +29,7 @@
         <tr>
             @foreach ($c['columns'] as $col)
                 @php $f = $fieldsByName[$col] ?? ['type' => 'text']; $v = $item->$col; @endphp
-                <td>
+                <td data-label="{{ $f['label'] ?? $col }}">
                     @if ($f['type'] === 'image')
                         @if ($v)<img class="adm-thumb" src="{{ asset($v) }}" alt="">@else <span class="adm-dim">—</span>@endif
                     @elseif ($f['type'] === 'select')

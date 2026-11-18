@@ -55,3 +55,43 @@ a{color:var(--plum)}
 .adm-group{border:1.5px solid var(--line);border-radius:14px;padding:18px 20px 4px;margin:0 0 24px}
 .adm-group legend{font:400 20px 'Fraunces',serif;color:var(--plum-dark);padding:0 8px}
 .adm-formbar{display:flex;gap:12px;margin-top:10px}
+
+/* ---------- Responsive del panel ---------- */
+.adm-main{max-width:1280px}
+@media(max-width:900px){
+  .adm-top{flex-direction:column;align-items:stretch;gap:8px}
+  .adm-top nav{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+  .adm-top nav a{white-space:nowrap}
+}
+@media(max-width:720px){
+  .adm-main{padding:22px 14px 60px}
+  h1{font-size:27px}
+  .adm-head{flex-direction:column;align-items:stretch}
+  .adm-head .adm-btn{text-align:center}
+  .adm-btn{padding:10px 18px;font-size:15px}
+  .adm-form{padding:18px 16px;border-radius:14px}
+  .adm-formbar{flex-direction:column}
+  .adm-formbar .adm-btn{text-align:center}
+  .adm-cards{grid-template-columns:1fr}
+  /* la tabla pasa a tarjetas: una por elemento */
+  .adm-tablewrap{background:none;border:0;overflow:visible}
+  .adm-table,.adm-table tbody,.adm-table tr,.adm-table td{display:block;width:100%}
+  .adm-table thead{display:none}
+  .adm-table tr{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:6px 14px 12px;margin-bottom:14px}
+  .adm-table td{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:9px 0;border-bottom:1px solid #eee8f1;text-align:right}
+  .adm-table td::before{content:attr(data-label);font:700 11px 'Quicksand',sans-serif;letter-spacing:.09em;text-transform:uppercase;color:#7d7487;text-align:left;flex:0 0 38%}
+  .adm-table td.adm-actions{display:flex;justify-content:stretch;gap:10px;border-bottom:0;padding-top:12px}
+  .adm-table td.adm-actions::before{display:none}
+  .adm-actions form{flex:1}
+  .adm-actions .adm-btn{width:100%;margin:0;text-align:center;padding:10px}
+  .adm-actions>.adm-btn{flex:1}
+  .adm-thumb{height:64px}
+  .adm-current img{max-width:100%}
+}
+
+@media(max-width:900px){
+  .adm-top{flex-wrap:nowrap}
+  .adm-top nav{min-width:0;width:100%}
+  .adm-brand{min-width:0}
+}
+html,body{overflow-x:hidden}

@@ -8,6 +8,7 @@
     <h1>Clases y horarios</h1>
     <p class="intro">Pulsa la <b>i</b> junto a cada actividad para descubrirla.</p>
 
+    <div class="groups">
     @foreach ($groups as $sede => $days)
         <section class="group">
             <h2>{{ $sede }}</h2>
@@ -32,6 +33,7 @@
             @endforeach
         </section>
     @endforeach
+    </div>
 
     <div class="end">
         @if ($wa = \App\Models\Setting::get('social_whatsapp'))
