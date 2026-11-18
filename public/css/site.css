@@ -219,3 +219,22 @@ main{max-width:none!important;width:100%;margin:0!important;padding-left:var(--g
 /* Online · foto de la tarjeta centrada en la cara */
 .online-card img{height:340px!important;object-fit:cover!important;object-position:50% 14%!important}
 @media(max-width:750px){.online-card img{height:auto!important;max-height:none!important}}
+
+/* Los anchos incluyen el relleno (evita que las páginas se salgan por la derecha) */
+*,*::before,*::after{box-sizing:border-box}
+
+/* ---------- Calendario más compacto ---------- */
+.cal-wrap{max-width:1320px!important;margin-left:auto!important;margin-right:auto!important;padding-top:22px!important}
+.cal-title{font-size:clamp(28px,3.6vw,42px)!important}
+.cal-legend{margin:12px 0 2px;font-size:12.5px}
+.cal-note{margin-top:16px}
+@media(min-width:961px){
+  .cal-grid{gap:8px;margin-top:8px}
+  .cal-dow{font-size:11px;padding:3px 0 0}
+  .cal-day{min-height:116px;padding:36px 7px 7px;gap:5px}
+  .cal-num{top:6px;right:7px;width:27px;height:27px;font-size:13px}
+  .cal-item{padding:5px 8px}
+  .cal-item strong{font-size:12.5px}
+  .cal-item small{font-size:11px}
+  .cal-closed{font-size:11px}
+}
