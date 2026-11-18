@@ -117,14 +117,14 @@ class PlanetaSeeder extends Seeder
         OnlineCard::create(['tag' => 'Para docentes', 'title' => 'Recursos de meditación para profesores', 'body' => 'Materiales y propuestas para enriquecer tus clases.', 'visual' => 'Docentes', 'sort' => 10]);
         OnlineCard::create(['tag' => 'Programa completo', 'title' => 'Curso de mindfulness', 'body' => 'Un recorrido de 36 semanas para incorporar la atención plena a la vida cotidiana.', 'visual' => '36 semanas', 'sort' => 20]);
         OnlineCard::create(['tag' => 'Meditaciones gratuitas', 'title' => 'Insight Timer', 'body' => 'Escucha mis meditaciones gratuitas en la app Insight Timer, a tu propio ritmo.', 'image' => 'img/d5d138612b.jpg',
-            'link_url' => 'https://insighttimer.com/', 'link_text' => 'Ir a Insight Timer', 'sort' => 30]);
+            'link_url' => 'https://insighttimer.com/planeta', 'link_text' => 'Ir a Insight Timer', 'sort' => 30]);
     }
 
     private function settings(): void
     {
         $defaults = [
             'social_whatsapp' => 'https://wa.me/34647752638',
-            'social_insight' => 'https://insighttimer.com/',
+            'social_insight' => 'https://insighttimer.com/planeta',
             'banner_inicio' => 'img/banner-inicio.jpg',
             'banner_calendario' => 'img/banner-pequeno.jpg',
             'banner_talleres' => 'img/banner-pequeno.jpg',
