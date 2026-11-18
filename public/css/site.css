@@ -215,3 +215,7 @@ main{max-width:none!important;width:100%;margin:0!important;padding-left:var(--g
   .panel{padding:12px 10px!important}
   .panel .slidearea .poster{height:400px!important;max-width:none!important}
 }
+
+/* Online · foto de la tarjeta centrada en la cara */
+.online-card img{height:340px!important;object-fit:cover!important;object-position:50% 14%!important}
+@media(max-width:750px){.online-card img{height:auto!important;max-height:none!important}}
