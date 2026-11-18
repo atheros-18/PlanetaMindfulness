@@ -43,7 +43,7 @@ class PageController extends Controller
     public function asociacion()
     {
         $items = Poster::ofKind('taller')->filter(fn ($p) => $p->image)->groupBy('month');
-        $months = collect(Poster::monthTabs(6))
+        $months = collect(Poster::monthTabs(12))
             ->filter(fn ($t) => $items->has($t['key']))
             ->map(fn ($t) => $t + ['items' => $items[$t['key']]->map(fn ($p) => [
                 'name' => trim(($p->date_text ? $p->date_text.' · ' : '').$p->title),

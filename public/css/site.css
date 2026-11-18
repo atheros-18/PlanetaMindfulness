@@ -252,3 +252,40 @@ main{max-width:none!important;width:100%;margin:0!important;padding-left:var(--g
   .cal-item small{font-size:12px}
   .cal-num{width:30px;height:30px;font-size:14px}
 }
+
+/* ---------- Asociación · carteles del mes: hasta 4 a la vez, flechas solo si hay más ---------- */
+#monthsBar{max-width:1040px!important}
+.panel{max-width:1040px!important;padding:16px 18px 12px!important}
+.postersrow{display:flex;align-items:center;gap:10px;margin:12px 0 4px}
+.postersrow .arrow{flex:none;width:40px;height:40px;min-width:0!important;min-height:0!important;font-size:22px}
+.postersrow .arrow[hidden]{display:none!important}
+.pviewport{flex:1;min-width:0;container-type:inline-size;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none}
+.pviewport::-webkit-scrollbar{display:none}
+.ptrack{display:flex;gap:14px;width:max-content;min-width:100%;justify-content:center;padding:6px 4px 10px}
+.pcard{flex:0 0 calc((100cqw - 3*14px)/4);margin:0;scroll-snap-align:start}
+.pcard img{display:block;width:100%;height:auto;border-radius:12px;border:1.5px solid var(--lilac-3);background:#fff;cursor:zoom-in;transition:transform .3s cubic-bezier(.3,1.5,.5,1),box-shadow .25s}
+.pcard img:hover{transform:translateY(-3px) rotate(-.6deg);box-shadow:4px 5px 0 var(--lilac-3)}
+.pcard figcaption{margin-top:8px;text-align:center;font:600 12.5px/1.35 var(--f-menu);color:var(--plum-dark)}
+@media(max-width:999px){.pcard{flex-basis:calc((100cqw - 2*14px)/3)}}
+@media(max-width:699px){
+  .pcard{flex-basis:calc((100cqw - 14px)/2)}
+  .ptrack{gap:14px}
+  .postersrow{gap:6px}
+  .postersrow .arrow{width:34px;height:34px;font-size:20px}
+  .panel{padding:12px 8px 10px!important}
+}
+
+/* Móvil: un cartel grande por pantalla, asomando el siguiente para invitar a deslizar */
+@media(max-width:699px){
+  .pcard{flex-basis:calc(100cqw * .8)!important}
+}
+
+/* Menú en móvil/tablet: compacto y sin quedarse fijo (no tapa la pantalla) */
+@media(max-width:900px){
+  .sitenav{position:static!important;padding-top:4px;padding-bottom:2px}
+}
+@media(max-width:700px){
+  .sitenav-links{gap:0 2px}
+  .sitenav-links a{padding:8px 8px 11px!important;font-size:13.5px!important}
+  .sitenav-logo img{height:48px!important}
+}
