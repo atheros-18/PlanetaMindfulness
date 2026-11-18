@@ -1,0 +1,56 @@
+*{box-sizing:border-box}body{margin:0;background:#f9f7ef;color:#354a3d;font:16px/1.65 system-ui,Arial,sans-serif}main{max-width:860px;margin:auto;padding:32px 18px 80px}h1{font:normal 42px Georgia,serif;text-align:center;margin:22px 0 6px}h2{font:normal 27px Georgia,serif;margin:0 0 8px}h3{font:normal 25px Georgia,serif;margin:10px 0}p{margin:10px 0}header{text-align:center;padding:20px;background:#eaf0e7;letter-spacing:.13em;font-size:14px}.intro{text-align:center;color:#728575;margin:0 0 32px}.group{background:#fffefa;border:1px solid #dce5d9;border-radius:17px;padding:21px;margin:17px 0}.place{font-size:13px;color:#78917d}.entry{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #e7ece4;padding:14px 0;gap:10px}.entry:first-of-type{border-top:0}.when{color:#748376;font-size:13px}.info{cursor:pointer;background:#e7efe7;border:1px solid #a3b9a5;color:#47644d;border-radius:50%;font-weight:bold;width:37px;height:37px;flex-shrink:0;font-size:18px}dialog{border:0;border-radius:20px;padding:0;max-width:610px;width:calc(100% - 28px);max-height:88vh;overflow:auto;box-shadow:0 16px 65px #17271d55;color:#344c3a;background:#fffdf8}dialog::backdrop{background:#1c33247a}.modalimg{width:100%;height:270px;object-fit:cover;display:block}.content{padding:32px 48px 42px}.content p{line-height:1.85;margin:18px 0;max-width:55ch}.content h3{font:normal 25px Georgia,serif;margin:10px 0 18px}.content .subtitle{display:block;line-height:1.6;margin-bottom:8px}.content .link{margin:22px 0 0}.content{font-size:16px;line-height:1.85}@media(max-width:600px){.content{padding:28px 32px 36px}}.subtitle{color:#829480;font-size:14px}.close{position:sticky;top:8px;float:right;margin:10px 10px -50px 0;border:0;border-radius:50%;background:#fffefa;width:40px;height:40px;font-size:24px;cursor:pointer;z-index:2}.link{display:inline-block;margin:10px;padding:10px 20px;border:1px solid #98b09a;border-radius:25px;color:#36523d;text-decoration:none}.end{text-align:center;padding:25px}footer{text-align:center;color:#78877a;padding:20px}
+/* Todas las fichas comparten la misma composición que Fuerza y Consciencia */
+dialog .content{padding:32px 48px 42px}
+dialog .content p{line-height:1.85;margin:18px 0;max-width:55ch}
+dialog .content h3{margin:10px 0 24px}
+dialog .modalimg{width:100%;height:270px;object-fit:cover;display:block}
+@media(max-width:600px){dialog .content{padding:28px 32px 36px}dialog .content p{max-width:100%}}
+
+/* Fichas uniformes, imágenes completas y textos con aire */
+dialog .content{padding:32px 48px 44px!important}dialog .content p{margin:18px 0;line-height:1.85}dialog .modalimg{height:270px;object-fit:contain;background:#f5f2e9}dialog#m-lab .modalimg{object-fit:cover}dialog .close{position:sticky;top:8px}@media(max-width:600px){dialog .content{padding:28px 32px 38px!important}}
+
+/* Paleta cálida y viva para la página de horarios */
+body{background:linear-gradient(155deg,#f8eadd 0%,#f3f5e9 42%,#e7f0eb 100%);color:#344d40}
+header{background:linear-gradient(95deg,#dcebdc,#f5dfd2,#eee4f1);color:#315845;font-weight:700;border-bottom:2px solid #c6d9c5}
+main{max-width:900px}
+h1{color:#355d49;text-shadow:0 2px 0 #ffffffa0}
+.intro{color:#647e70}
+.group{background:#fffdf9;border:1px solid #d5e3d7;box-shadow:0 8px 25px #4e70591a;border-left:7px solid #88ae96;padding:24px 24px;margin:20px 0}
+.group:nth-of-type(2){border-left-color:#d8a0a4;background:#fffaf8}
+.group:nth-of-type(3){border-left-color:#d4b16e;background:#fffdf5}
+.group:nth-of-type(4){border-left-color:#a7a0ca;background:#fcfaff}
+.group h2{color:#355c48}
+.place{color:#8b6e72;font-weight:650;letter-spacing:.015em}
+.day-block{margin-top:16px;padding:15px 17px 5px;border-radius:14px;background:#f1f7ee}
+.day-block:nth-of-type(2){background:#fff0e9}
+.day-block:nth-of-type(3){background:#f4eff9}
+.day-label{font-size:15px;color:#4d6955;margin-bottom:4px}
+.entry strong{color:#355443;font-size:16px}
+.when{color:#768677}
+.info{background:#d9e9dc;border-color:#9bbda5;color:#365d43;box-shadow:0 2px 5px #0000000b}
+.info:hover{background:#bedcc4}
+.link{background:#e6f0e5;border-color:#a4bea8}
+@media(max-width:600px){.group{padding:19px 16px}.day-block{padding:13px 12px 4px}main{padding:24px 14px 65px}}
+
+/* Nueva identidad oliva */
+body{background:linear-gradient(155deg,#f0f1e6 0%,#f9f6ed 48%,#e9eee2 100%);color:#3c4834}
+header{background:linear-gradient(120deg,#64764a,#82956a);color:#fff;border:0;padding:22px 14px 20px;letter-spacing:.08em}
+.brand{display:flex;align-items:center;justify-content:center;gap:13px;font-size:16px;letter-spacing:.1em}.brand b{font-weight:750}.brand-sub{font-size:11px;letter-spacing:.13em;margin-top:8px;color:#f0f3e6}
+.planet-logo{width:43px;height:43px;border:2px solid #fff9;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;position:relative;transform:rotate(-22deg);background:#ffffff15;flex-shrink:0}.planet-logo:after{content:'';position:absolute;width:59px;height:19px;border:2px solid #e5ebd6;border-radius:50%;transform:rotate(-14deg)}.planet-core{font-size:21px;transform:rotate(22deg)}
+h1{color:#4d6339;font-size:clamp(34px,6vw,46px)}.intro{color:#697a57}
+.group{border:1px solid #dce2cf;border-left:6px solid #879d68;background:#fffefa;box-shadow:0 8px 24px #495d3615}.group:nth-of-type(2){border-left-color:#b5a274;background:#fffdf7}.group:nth-of-type(3){border-left-color:#9ba982;background:#fcfdf8}.group:nth-of-type(4){border-left-color:#b2b98a;background:#fffefa}
+.group h2{color:#526a3d}.day-block{background:#eef2e6!important;border:1px solid #dfe7d6;margin:14px 0;padding:13px 16px 4px}.day-block:nth-of-type(2){background:#f6f0e3!important}.day-block:nth-of-type(3){background:#eff0e5!important}.day-label{font-weight:750;color:#586d42;font-size:15px}.place{color:#69784f}.entry strong{color:#354d35}.when{color:#758064}.info{background:#e3ebd7;border-color:#9cad88;color:#4e633c}.info:hover{background:#d1e0be}.link{background:#e8efdf;border-color:#a3b48e;color:#415a35}
+@media(max-width:600px){.brand{font-size:13px;gap:10px}.planet-logo{width:36px;height:36px}.planet-logo:after{width:49px}.day-block{padding:12px 11px 4px}}
+
+/* Logotipo oficial integrado, con su color morado original */
+header{background:linear-gradient(125deg,#66764e,#83966c);padding:19px 16px 16px}
+.brand-official{display:flex;justify-content:center;align-items:center}
+.brand-official img{display:block;width:clamp(130px,28vw,190px);height:auto;max-height:155px;object-fit:contain;background:#fff;border-radius:16px;padding:9px 12px;box-shadow:0 5px 16px #263b2730}
+.brand-sub{margin-top:12px;color:#f7f6ee}
+
+
+/* Ajustes comunes de todas las fichas */
+dialog .content{padding:32px 48px 42px!important;}
+dialog .content p{margin:18px 0!important;line-height:1.85!important;max-width:55ch;}
+dialog .modalimg{display:block;width:100%;height:270px;object-fit:cover;object-position:center;}
+@media(max-width:600px){dialog .content{padding:28px 32px 36px!important;}dialog .modalimg{height:240px;}}

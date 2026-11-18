@@ -1,0 +1,1 @@
+function showMonth(btn,id){document.querySelectorAll('.months button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');['nov','dic','ene'].forEach(x=>document.getElementById(x).hidden=x!==id)}function move(dir){const c=document.getElementById('slides');c.scrollBy({left:dir*(Math.min(440,innerWidth*.82)+20),behavior:'smooth'})}

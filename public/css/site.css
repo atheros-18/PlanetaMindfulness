@@ -1,0 +1,6 @@
+.sitenav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px 18px;padding:10px 4%;background:#3f5233;font:13px/1.4 system-ui,Arial,sans-serif;position:relative;z-index:5}
+.sitenav a{color:#eef2e4;text-decoration:none}
+.sitenav-brand{font:600 15px Georgia,serif!important;letter-spacing:.04em}
+.sitenav-links{display:flex;flex-wrap:wrap;gap:4px 16px}
+.sitenav-links a{padding:3px 0;border-bottom:2px solid transparent;opacity:.85}
+.sitenav-links a:hover,.sitenav-links a.on{opacity:1;border-bottom-color:#c9d8b0}
