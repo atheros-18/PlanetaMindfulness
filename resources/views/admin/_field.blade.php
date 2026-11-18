@@ -23,7 +23,7 @@
                 </div>
             @endif
             <input id="f-{{ $name }}" type="file" name="{{ $name }}" accept="image/png,image/jpeg,image/webp,image/gif">
-            <small>{{ ($value ?? null) ? 'Elige un archivo solo si quieres cambiar la imagen.' : 'JPG, PNG, WebP o GIF, máximo 8 MB.' }}</small>
+            <small>{{ ($value ?? null) ? 'Elige un archivo solo si quieres cambiar la imagen. ' : 'JPG, PNG, WebP o GIF, máximo 8 MB. ' }}{{ $f['help'] ?? '' }}</small>
             @break
         @default
             <input id="f-{{ $name }}" type="text" name="{{ $name }}" value="{{ $val }}">

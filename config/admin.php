@@ -82,6 +82,14 @@ return [
             ['name' => 'social_youtube', 'label' => 'YouTube', 'type' => 'text', 'rules' => 'nullable|url|max:300'],
             ['name' => 'social_insight', 'label' => 'Insight Timer', 'type' => 'text', 'rules' => 'nullable|url|max:300'],
         ],
+        'Banners de cada página' => [
+            ['name' => 'banner_inicio', 'label' => 'Inicio (Clases y horarios) · banner grande', 'type' => 'image', 'help' => 'Medida: 1920 × 600 px (proporción 16:5). Deja lo importante en el centro: en móvil se recortan los lados.'],
+            ['name' => 'banner_talleres', 'label' => 'Talleres y retiros · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1920 × 320 px (proporción 6:1).'],
+            ['name' => 'banner_carteles', 'label' => 'Carteles · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1920 × 320 px (proporción 6:1).'],
+            ['name' => 'banner_asociacion', 'label' => 'Asociación · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1920 × 320 px (proporción 6:1).'],
+            ['name' => 'banner_online', 'label' => 'Online · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1920 × 320 px (proporción 6:1).'],
+            ['name' => 'banner_camino', 'label' => 'Mi camino · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1920 × 320 px (proporción 6:1).'],
+        ],
         'Página «Mi camino»' => [
             ['name' => 'camino_foto', 'label' => 'Foto', 'type' => 'image'],
             ['name' => 'camino_titulo', 'label' => 'Título', 'type' => 'text', 'rules' => 'nullable|max:120'],

@@ -39,6 +39,8 @@
     <span class="sitenav-end"></span>
 </div>
 
+@include('partials.banner')
+
 @yield('content')
 
 <div class="site-footer" role="contentinfo">

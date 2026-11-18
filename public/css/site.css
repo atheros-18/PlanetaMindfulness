@@ -123,3 +123,10 @@ img{max-width:100%}
 .site-footer-bottom{max-width:1080px;margin:auto;padding:9px clamp(16px,4vw,40px) 14px;border-top:1px solid rgba(255,255,255,.13);display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12px;color:#b9abc8}
 .site-footer .ver{font-family:ui-monospace,Consolas,monospace!important;letter-spacing:.06em}
 @media(max-width:760px){.site-footer-row{justify-content:center;text-align:center}.site-footer-links{flex-basis:100%;order:3}.site-footer-bottom{flex-direction:column;text-align:center}}
+
+/* ---------- Banners ---------- */
+.banner{width:100%;overflow:hidden;background:var(--lilac);line-height:0}
+.banner img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.banner--home{aspect-ratio:16/5;min-height:230px;max-height:600px}   /* 1920 × 600 */
+.banner--small{aspect-ratio:6/1;min-height:130px;max-height:320px}   /* 1920 × 320 */
+.banner-ph{display:grid;place-items:center;line-height:1.4;border-bottom:2px dashed var(--lilac-3);color:var(--plum);font:600 14px var(--f-menu);letter-spacing:.04em}
