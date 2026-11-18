@@ -364,3 +364,15 @@ main{max-width:none!important;width:100%;margin:0!important;padding-left:var(--g
   .pg-online .online-card img{height:auto!important;max-height:300px;object-position:50% 14%!important}
   .pg-online .online-visual{height:110px!important}
 }
+
+/* Carteles · retiros: el cartel entra completo en su tarjeta, sin salirse */
+.pg-carteles .retreat{grid-template-columns:minmax(170px,230px) 1fr!important;align-items:center;overflow:hidden}
+.pg-carteles .retreat .visual.has-img{display:block!important;padding:12px!important;min-height:0!important;max-height:none!important;background:var(--lilac)!important;align-self:stretch}
+.pg-carteles .retreat .visual.has-img img{display:block;width:100%;height:auto!important;max-height:none!important;object-fit:contain;border-radius:10px}
+.pg-carteles .past{align-items:start}
+.pg-carteles .past article img{width:100%;max-width:220px;height:auto;border-radius:10px;border:1.5px solid var(--lilac-3)}
+@media(max-width:699px){
+  .pg-carteles .retreat{grid-template-columns:1fr!important}
+  .pg-carteles .retreat .visual.has-img{padding:14px!important}
+  .pg-carteles .retreat .visual.has-img img{max-width:260px;margin:0 auto}
+}

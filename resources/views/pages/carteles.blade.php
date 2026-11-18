@@ -56,7 +56,7 @@
         @foreach ($proximos as $r)
             <div class="retreat">
                 @if ($r->image)
-                    <div class="visual" style="padding:0"><img src="{{ asset($r->image) }}" alt="Cartel: {{ $r->title }}" style="width:100%;height:100%;object-fit:cover"></div>
+                    <div class="visual has-img"><img src="{{ asset($r->image) }}" alt="Cartel: {{ $r->title }}"></div>
                 @else
                     <div class="visual">{{ $r->title }}@if ($r->place)<br>{{ $r->place }}@endif</div>
                 @endif
@@ -82,7 +82,7 @@
                     @if ($r->date_text)<div class="tag">{{ $r->date_text }}</div>@endif
                     <h3>{{ $r->title }}</h3>
                     @if ($r->place)<p>{{ $r->place }}</p>@endif
-                    @if ($r->image)<img src="{{ asset($r->image) }}" alt="Cartel: {{ $r->title }}" style="width:100%;border-radius:8px">@endif
+                    @if ($r->image)<img src="{{ asset($r->image) }}" alt="Cartel: {{ $r->title }}">@endif
                 </article>
             @endforeach
         </div>
