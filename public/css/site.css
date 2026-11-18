@@ -376,3 +376,7 @@ main{max-width:none!important;width:100%;margin:0!important;padding-left:var(--g
   .pg-carteles .retreat .visual.has-img{padding:14px!important}
   .pg-carteles .retreat .visual.has-img img{max-width:260px;margin:0 auto}
 }
+
+/* Banner del inicio: 1900 × 300 (proporción 19:3) */
+.banner--home{aspect-ratio:19/3;min-height:120px;max-height:300px}
+@media(max-width:700px){.banner--home{min-height:120px}}

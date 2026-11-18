@@ -1,6 +1,6 @@
 @php
     $cfg = [
-        'horarios'   => ['inicio',     'home',  '1920 × 600'],
+        'horarios'   => ['inicio',     'home',  '1900 × 300'],
         'calendario' => ['calendario', 'small', '1900 × 190'],
         'talleres'   => ['talleres',   'small', '1900 × 190'],
         'carteles'   => ['carteles',   'small', '1900 × 190'],

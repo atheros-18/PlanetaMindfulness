@@ -15,7 +15,7 @@
 @endif
 @endforeach
 </div><p style="font-size:13px;color:#728477;margin-top:12px">Más información y programación en la pestaña «Talleres y retiros».</p></section>
-@verbatim<section aria-label="Talleres y contacto" class="final-cta"><span class="eyebrow">Seguimos compartiendo</span><h2>¿Te apetece participar?</h2><p>Descubre los próximos talleres, encuentros y retiros, o escríbenos para saber más.</p><div class="cta-buttons"><a class="cta primary" href="/talleres">  Talleres puntuales</a><a class="cta secondary" href="https://wa.me/34647752638?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Planeta%20Mindfulness" rel="noopener noreferrer" target="_blank">◉   WhatsApp</a></div></section></main><div aria-label="Cartel ampliado" class="lightbox" id="lightbox" role="dialog"><button aria-label="Cerrar" class="close" id="close">×</button><img alt="Cartel ampliado" id="large"/></div>
+@verbatim<section aria-label="Talleres y contacto" class="final-cta"><span class="eyebrow">Seguimos compartiendo</span><h2>¿Te apetece participar?</h2><p>Descubre los próximos talleres, encuentros y retiros, o escríbenos para saber más.</p><div class="cta-buttons"><a class="cta primary" href="/talleres">  Talleres y retiros</a><a class="cta secondary" href="https://wa.me/34647752638?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Planeta%20Mindfulness" rel="noopener noreferrer" target="_blank">◉   WhatsApp</a></div></section></main><div aria-label="Cartel ampliado" class="lightbox" id="lightbox" role="dialog"><button aria-label="Cerrar" class="close" id="close">×</button><img alt="Cartel ampliado" id="large"/></div>
 @endverbatim
 @endsection
 

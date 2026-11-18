@@ -39,7 +39,7 @@
         @if ($wa = \App\Models\Setting::get('social_whatsapp'))
             <a class="link" href="{{ $wa }}" target="_blank" rel="noopener noreferrer">WhatsApp · Consultas e inscripciones</a>
         @endif
-        <p><a class="link" href="{{ url('/talleres') }}">Talleres puntuales →</a></p>
+        <p><a class="link" href="{{ url('/talleres') }}">Talleres y retiros →</a></p>
     </div>
 </main>
 

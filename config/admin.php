@@ -101,7 +101,7 @@ return [
             ['name' => 'social_insight', 'label' => 'Insight Timer', 'type' => 'text', 'rules' => 'nullable|url|max:300'],
         ],
         'Banners de cada página' => [
-            ['name' => 'banner_inicio', 'label' => 'Inicio (Clases y horarios) · banner grande', 'type' => 'image', 'help' => 'Medida: 1920 × 600 px (proporción 16:5). Deja lo importante en el centro: en móvil se recortan los lados.'],
+            ['name' => 'banner_inicio', 'label' => 'Inicio · banner principal', 'type' => 'image', 'help' => 'Medida: 1900 × 300 px (proporción 19:3). Deja lo importante en el centro: en móvil se recortan los lados.'],
             ['name' => 'banner_calendario', 'label' => 'Calendario · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1900 × 190 px (proporción 10:1).'],
             ['name' => 'banner_talleres', 'label' => 'Talleres y retiros · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1900 × 190 px (proporción 10:1).'],
             ['name' => 'banner_carteles', 'label' => 'Carteles · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1900 × 190 px (proporción 10:1).'],
