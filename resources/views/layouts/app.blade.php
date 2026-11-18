@@ -20,7 +20,7 @@
 @endphp
 <div class="sitenav" role="navigation" aria-label="Principal">
     <a class="sitenav-logo" href="{{ url('/') }}" aria-label="Planeta Mindfulness · Inicio">
-        <img src="{{ asset('img/93e82255f8.jpg') }}" alt="Planeta Mindfulness">
+        <img src="{{ asset('img/logo.png') }}" alt="Planeta Mindfulness">
     </a>
     <div class="sitenav-links">
         @foreach ($menu as [$href, $label, $on])
@@ -34,8 +34,8 @@
 
 <div class="site-footer" role="contentinfo">
     <div class="site-footer-grid">
-        <div>
-            <img class="site-footer-logo" src="{{ asset('img/93e82255f8.jpg') }}" alt="Planeta Mindfulness">
+        <div class="site-footer-brand">
+            <a href="{{ url('/') }}"><img class="site-footer-logo" src="{{ asset('img/logo-claro.png') }}" alt="Planeta Mindfulness"></a>
             <p>Tu bienestar a través de la música, el movimiento y la atención plena.</p>
         </div>
         <div>
