@@ -1,12 +1,12 @@
 @php
     $cfg = [
         'horarios'   => ['inicio',     'home',  '1920 × 600'],
-        'calendario' => ['calendario', 'small', '1900 × 300'],
-        'talleres'   => ['talleres',   'small', '1900 × 300'],
-        'carteles'   => ['carteles',   'small', '1900 × 300'],
-        'asociacion' => ['asociacion', 'small', '1900 × 300'],
-        'online'     => ['online',     'small', '1900 × 300'],
-        'mi-camino'  => ['camino',     'small', '1900 × 300'],
+        'calendario' => ['calendario', 'small', '1900 × 190'],
+        'talleres'   => ['talleres',   'small', '1900 × 190'],
+        'carteles'   => ['carteles',   'small', '1900 × 190'],
+        'asociacion' => ['asociacion', 'small', '1900 × 190'],
+        'online'     => ['online',     'small', '1900 × 190'],
+        'mi-camino'  => ['camino',     'small', '1900 × 190'],
     ][Route::currentRouteName()] ?? null;
 @endphp
 @if ($cfg)

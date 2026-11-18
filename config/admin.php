@@ -102,12 +102,12 @@ return [
         ],
         'Banners de cada página' => [
             ['name' => 'banner_inicio', 'label' => 'Inicio (Clases y horarios) · banner grande', 'type' => 'image', 'help' => 'Medida: 1920 × 600 px (proporción 16:5). Deja lo importante en el centro: en móvil se recortan los lados.'],
-            ['name' => 'banner_calendario', 'label' => 'Calendario · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1900 × 300 px (proporción 19:3).'],
-            ['name' => 'banner_talleres', 'label' => 'Talleres y retiros · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1900 × 300 px (proporción 19:3).'],
-            ['name' => 'banner_carteles', 'label' => 'Carteles · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1900 × 300 px (proporción 19:3).'],
-            ['name' => 'banner_asociacion', 'label' => 'Asociación · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1900 × 300 px (proporción 19:3).'],
-            ['name' => 'banner_online', 'label' => 'Online · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1900 × 300 px (proporción 19:3).'],
-            ['name' => 'banner_camino', 'label' => 'Mi camino · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1900 × 300 px (proporción 19:3).'],
+            ['name' => 'banner_calendario', 'label' => 'Calendario · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1900 × 190 px (proporción 10:1).'],
+            ['name' => 'banner_talleres', 'label' => 'Talleres y retiros · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1900 × 190 px (proporción 10:1).'],
+            ['name' => 'banner_carteles', 'label' => 'Carteles · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1900 × 190 px (proporción 10:1).'],
+            ['name' => 'banner_asociacion', 'label' => 'Asociación · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1900 × 190 px (proporción 10:1).'],
+            ['name' => 'banner_online', 'label' => 'Online · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1900 × 190 px (proporción 10:1).'],
+            ['name' => 'banner_camino', 'label' => 'Mi camino · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1900 × 190 px (proporción 10:1).'],
         ],
         'Página «Mi camino»' => [
             ['name' => 'camino_foto', 'label' => 'Foto', 'type' => 'image'],
