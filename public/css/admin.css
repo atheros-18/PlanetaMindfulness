@@ -98,3 +98,67 @@ html,body{overflow-x:hidden}
 
 .adm-check.ok{color:var(--ink)!important;font-weight:600!important;font-family:Quicksand,sans-serif}
 .adm-field input[type=date]{width:100%;font:16px Lora,serif;color:var(--ink);padding:10px 13px;border:1.5px solid #cdbfdb;border-radius:10px;background:#fffdfb}
+
+/* ===================== Interruptor de tema y modo oscuro del panel ===================== */
+.adm-theme{display:inline-grid;place-items:center;width:42px;height:42px;padding:0;cursor:pointer;flex:none;
+  border:2px solid var(--plum);border-radius:58% 42% 55% 45%/47% 56% 44% 53%;background:#fffdf8;color:var(--plum);
+  box-shadow:2px 3px 0 var(--plum);transition:transform .25s cubic-bezier(.3,1.7,.5,1),box-shadow .2s,background .2s}
+.adm-theme:hover{transform:translate(1px,2px) rotate(-10deg);box-shadow:0 0 0 var(--plum);background:var(--lilac)}
+.adm-theme svg{width:21px;height:21px;display:block;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.adm-theme .i-sun{display:none}
+.adm-brand img.logo-dark{display:none}
+html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:background-color .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease!important}
+@media(max-width:900px){
+  .adm-top{display:grid!important;grid-template-columns:1fr auto;grid-template-areas:"brand theme" "nav nav";align-items:center}
+  .adm-brand{grid-area:brand}.adm-top nav{grid-area:nav}.adm-theme{grid-area:theme}
+}
+
+html[data-theme="dark"]{color-scheme:dark;--plum:#b88fdc;--plum-dark:#ecdff7;--lilac:#2a2035;--line:#3a2e49;--ink:#e9e3ef;--sage:#8fb095}
+html[data-theme="dark"] body{background:#16111c}
+html[data-theme="dark"] .adm-theme .i-moon{display:none}
+html[data-theme="dark"] .adm-theme .i-sun{display:block}
+html[data-theme="dark"] .adm-brand img.logo-light{display:none}
+html[data-theme="dark"] .adm-brand img.logo-dark{display:block}
+html[data-theme="dark"] .adm-theme{background:#1f1828;box-shadow:2px 3px 0 #6d3d96}
+html[data-theme="dark"] .adm-theme:hover{background:#2a2035;box-shadow:0 0 0 #6d3d96}
+html[data-theme="dark"] .adm-warn{background:#3a2e17;color:#f0d9a0}
+html[data-theme="dark"] .adm-top,html[data-theme="dark"] .adm-empty,html[data-theme="dark"] .adm-card,
+html[data-theme="dark"] .adm-tablewrap,html[data-theme="dark"] .adm-form{background:#1f1828}
+html[data-theme="dark"] .adm-top{border-bottom-color:#3a2e49}
+html[data-theme="dark"] .adm-card:hover{box-shadow:5px 6px 0 #3a2e49}
+html[data-theme="dark"] .adm-help,html[data-theme="dark"] .adm-card span,html[data-theme="dark"] .adm-field small,
+html[data-theme="dark"] .adm-empty{color:#a99fb6}
+html[data-theme="dark"] .adm-table th{background:#251d30;color:#a99fb6}
+html[data-theme="dark"] .adm-table td{border-bottom-color:#2f2640}
+html[data-theme="dark"] .adm-table tbody tr:hover{background:#261e31}
+html[data-theme="dark"] .adm-dim{color:#7d7190}
+html[data-theme="dark"] .adm-ok{background:#1f3326;border-color:#3f6a4a;color:#bfe3c6}
+html[data-theme="dark"] .adm-err{background:#3a1f24;border-color:#7a3a42;color:#f0c0c6}
+html[data-theme="dark"] .adm-btn{background:#1f1828;color:var(--plum-dark);box-shadow:2px 3px 0 #6d3d96}
+html[data-theme="dark"] .adm-btn:hover{background:#2a2035;box-shadow:0 1px 0 #6d3d96}
+html[data-theme="dark"] .adm-btn.primary{background:#6d3d96;color:#fff;box-shadow:2px 3px 0 #3f6a4a}
+html[data-theme="dark"] .adm-btn.primary:hover{background:#8350b0}
+html[data-theme="dark"] .adm-btn.danger{border-color:#d27a7a;color:#f0a0a0;box-shadow:2px 3px 0 #7a3a42}
+html[data-theme="dark"] .adm-btn.danger:hover{background:#3a1f24}
+html[data-theme="dark"] .adm-top nav a:hover{background:#2a2035}
+html[data-theme="dark"] .adm-top nav a.on{background:#6d3d96;color:#fff}
+html[data-theme="dark"] .adm-field input[type=text],html[data-theme="dark"] .adm-field input[type=number],
+html[data-theme="dark"] .adm-field input[type=date],html[data-theme="dark"] .adm-field select,
+html[data-theme="dark"] .adm-field textarea{background:#16111c;border-color:#55426d;color:var(--ink)}
+html[data-theme="dark"] .adm-field input:focus,html[data-theme="dark"] .adm-field select:focus,
+html[data-theme="dark"] .adm-field textarea:focus{border-color:#b88fdc;box-shadow:0 0 0 3px #3a2d4a}
+html[data-theme="dark"] .adm-field input[type=file]{color:var(--ink)}
+html[data-theme="dark"] .adm-check{color:#f0a0a0!important}
+html[data-theme="dark"] .adm-check.ok{color:var(--ink)!important}
+html[data-theme="dark"] .adm-current img{border-color:#3a2e49}
+@media(max-width:720px){
+  html[data-theme="dark"] .adm-table tr{background:#1f1828}
+  html[data-theme="dark"] .adm-tablewrap{background:none}
+  html[data-theme="dark"] .adm-table td::before{color:#a99fb6}
+}
+
+/* Cabecera del panel: logo + interruptor arriba, menú debajo (hasta 1200 px); en pantallas grandes, todo en una fila */
+@media(max-width:1200px){
+  .adm-top{display:grid!important;grid-template-columns:1fr auto;grid-template-areas:"brand theme" "nav nav";align-items:center;gap:8px 16px}
+  .adm-brand{grid-area:brand}.adm-top nav{grid-area:nav;min-width:0}.adm-theme{grid-area:theme}
+}
