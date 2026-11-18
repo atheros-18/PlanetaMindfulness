@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('css/carteles.css') }}">
 @endpush
 @section('content')
-<main>
+<main class="pg-carteles">
     <div class="hero">
         <div class="eyebrow">Experiencias para sentir y compartir</div>
         <h1>Talleres y retiros</h1>
@@ -93,7 +93,12 @@
 
 @push('scripts')
 <script>
-function showMonth(btn,id){document.querySelectorAll('.months button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.month-panel').forEach(p=>p.hidden=p.id!==id)}
-function move(dir,id){const c=document.getElementById(id);c.scrollBy({left:dir*(Math.min(440,innerWidth*.82)+20),behavior:'smooth'})}
+// Las flechas solo se muestran si los carteles del mes no caben (más de 4 en escritorio)
+function updateControls(){document.querySelectorAll('.month-panel:not([hidden])').forEach(function(p){var c=p.querySelector('.carousel'),ctl=p.querySelector('.controls');if(!c||!ctl)return;ctl.hidden=!(c.scrollWidth>c.clientWidth+4);})}
+function showMonth(btn,id){document.querySelectorAll('.months button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.month-panel').forEach(p=>p.hidden=p.id!==id);updateControls()}
+function move(dir,id){const c=document.getElementById(id),s=c.querySelector('.slide');c.scrollBy({left:dir*((s?s.getBoundingClientRect().width:260)+14),behavior:'smooth'})}
+addEventListener('resize',updateControls);addEventListener('load',updateControls);
+if('ResizeObserver' in window){var ro=new ResizeObserver(updateControls);document.querySelectorAll('.carousel').forEach(function(c){ro.observe(c)})}
+updateControls();
 </script>
 @endpush
