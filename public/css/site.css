@@ -224,7 +224,7 @@ main{max-width:none!important;width:100%;margin:0!important;padding-left:var(--g
 *,*::before,*::after{box-sizing:border-box}
 
 /* ---------- Calendario más compacto ---------- */
-.cal-wrap{max-width:1320px!important;margin-left:auto!important;margin-right:auto!important;padding-top:22px!important}
+.cal-wrap{max-width:none!important;padding-top:22px!important}
 .cal-title{font-size:clamp(28px,3.6vw,42px)!important}
 .cal-legend{margin:12px 0 2px;font-size:12.5px}
 .cal-note{margin-top:16px}
@@ -243,3 +243,12 @@ main{max-width:none!important;width:100%;margin:0!important;padding-left:var(--g
 .banner--small{max-height:190px}
 .banner--small img{object-position:50% 82%}
 @media(max-width:700px){.banner--small{min-height:84px;max-height:120px}}
+
+/* Calendario a todo el ancho: un poco más de aire en cada día cuando hay pantalla */
+@media(min-width:1500px){
+  .cal-grid{gap:10px}
+  .cal-day{min-height:128px}
+  .cal-item strong{font-size:13.5px}
+  .cal-item small{font-size:12px}
+  .cal-num{width:30px;height:30px;font-size:14px}
+}
