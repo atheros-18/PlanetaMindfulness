@@ -20,6 +20,7 @@
 @php
     $menu = [
         ['/', 'Clases y horarios', request()->is('/')],
+        ['/calendario', 'Calendario', request()->is('calendario')],
         ['/talleres', 'Talleres y retiros', request()->is('talleres')],
         ['/carteles', 'Carteles', request()->is('carteles')],
         ['/asociacion', 'Asociación', request()->is('asociacion')],

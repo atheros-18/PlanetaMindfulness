@@ -95,3 +95,6 @@ a{color:var(--plum)}
   .adm-brand{min-width:0}
 }
 html,body{overflow-x:hidden}
+
+.adm-check.ok{color:var(--ink)!important;font-weight:600!important;font-family:Quicksand,sans-serif}
+.adm-field input[type=date]{width:100%;font:16px Lora,serif;color:var(--ink);padding:10px 13px;border:1.5px solid #cdbfdb;border-radius:10px;background:#fffdfb}

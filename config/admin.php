@@ -7,11 +7,28 @@
  */
 return [
     'resources' => [
+        'calendario' => [
+            'model' => App\Models\CalendarEvent::class,
+            'label' => 'Calendario del mes',
+            'singular' => 'evento',
+            'help' => 'Talleres, retiros, clases puntuales y días sin clases con fecha concreta. Se ven en la pestaña «Calendario». Las clases semanales salen solas desde «Horario semanal».',
+            'order' => ['date', 'id'],
+            'columns' => ['date', 'end_date', 'kind', 'title', 'time'],
+            'fields' => [
+                ['name' => 'date', 'label' => 'Fecha (o primer día)', 'type' => 'date', 'rules' => 'required|date'],
+                ['name' => 'end_date', 'label' => 'Último día (solo si dura varios días)', 'type' => 'date', 'rules' => 'nullable|date|after_or_equal:date', 'help' => 'Para un retiro de 13 a 15, pon 13 arriba y 15 aquí.'],
+                ['name' => 'kind', 'label' => 'Tipo', 'type' => 'select', 'options' => 'event_kinds', 'rules' => 'required|in:taller,retiro,clase,cerrado,otro', 'help' => '«Día cerrado» oculta las clases semanales de ese día y muestra el título (por ejemplo, Festivo).'],
+                ['name' => 'title', 'label' => 'Título', 'type' => 'text', 'rules' => 'required|max:200'],
+                ['name' => 'time', 'label' => 'Horario', 'type' => 'text', 'rules' => 'nullable|max:60', 'help' => 'Ej.: 10:30 – 13:30'],
+                ['name' => 'place', 'label' => 'Lugar', 'type' => 'text', 'rules' => 'nullable|max:200'],
+                ['name' => 'activity_id', 'label' => 'Ficha de información (opcional)', 'type' => 'select', 'options' => 'activities', 'rules' => 'nullable|exists:activities,id', 'help' => 'Si eliges una, al pulsar el evento se abre su ficha.'],
+            ],
+        ],
         'horarios' => [
             'model' => App\Models\ScheduleSlot::class,
-            'label' => 'Calendario de clases',
+            'label' => 'Horario semanal',
             'singular' => 'clase',
-            'help' => 'Cada fila es una clase en el calendario de «Clases y horarios».',
+            'help' => 'Las clases fijas de cada semana. Salen en «Clases y horarios» y se repiten solas cada semana en el Calendario.',
             'order' => ['sede', 'sort', 'id'],
             'columns' => ['sede', 'day_label', 'title', 'time'],
             'fields' => [
@@ -20,6 +37,7 @@ return [
                 ['name' => 'title', 'label' => 'Nombre de la clase', 'type' => 'text', 'rules' => 'required|max:200'],
                 ['name' => 'time', 'label' => 'Horario', 'type' => 'text', 'rules' => 'nullable|max:60', 'help' => 'Ej.: 18:00 – 19:00'],
                 ['name' => 'activity_id', 'label' => 'Ficha de información (la «i»)', 'type' => 'select', 'options' => 'activities', 'rules' => 'nullable|exists:activities,id'],
+                ['name' => 'in_calendar', 'label' => '¿Repetir cada semana en el Calendario?', 'type' => 'checkbox', 'rules' => 'nullable|boolean', 'help' => 'Desmárcalo si la clase no es semanal (por ejemplo, un sábado al mes) y añade sus fechas en «Calendario del mes».'],
                 ['name' => 'sort', 'label' => 'Orden', 'type' => 'number', 'rules' => 'nullable|integer', 'help' => 'Número más bajo = aparece antes.'],
             ],
         ],
@@ -84,6 +102,7 @@ return [
         ],
         'Banners de cada página' => [
             ['name' => 'banner_inicio', 'label' => 'Inicio (Clases y horarios) · banner grande', 'type' => 'image', 'help' => 'Medida: 1920 × 600 px (proporción 16:5). Deja lo importante en el centro: en móvil se recortan los lados.'],
+            ['name' => 'banner_calendario', 'label' => 'Calendario · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1900 × 300 px (proporción 19:3).'],
             ['name' => 'banner_talleres', 'label' => 'Talleres y retiros · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1900 × 300 px (proporción 19:3).'],
             ['name' => 'banner_carteles', 'label' => 'Carteles · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1900 × 300 px (proporción 19:3).'],
             ['name' => 'banner_asociacion', 'label' => 'Asociación · banner pequeño', 'type' => 'image', 'help' => 'Medida: 1900 × 300 px (proporción 19:3).'],

@@ -5,6 +5,7 @@ use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'horarios'])->name('horarios');
+Route::get('/calendario', [\App\Http\Controllers\CalendarController::class, 'index'])->name('calendario');
 Route::get('/talleres', [PageController::class, 'talleres'])->name('talleres');
 Route::get('/carteles', [PageController::class, 'carteles'])->name('carteles');
 Route::get('/asociacion', [PageController::class, 'asociacion'])->name('asociacion');

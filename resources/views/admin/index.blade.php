@@ -32,6 +32,10 @@
                 <td data-label="{{ $f['label'] ?? $col }}">
                     @if ($f['type'] === 'image')
                         @if ($v)<img class="adm-thumb" src="{{ asset($v) }}" alt="">@else <span class="adm-dim">—</span>@endif
+                    @elseif ($f['type'] === 'date')
+                        {{ $v ? $v->format('d/m/Y') : '—' }}
+                    @elseif ($f['type'] === 'checkbox')
+                        {{ $v ? 'Sí' : 'No' }}
                     @elseif ($f['type'] === 'select')
                         @php $optCache[$f['options']] ??= $ctrl->options($f['options']); @endphp
                         {{ $optCache[$f['options']][$v] ?? ($v ?: '—') }}

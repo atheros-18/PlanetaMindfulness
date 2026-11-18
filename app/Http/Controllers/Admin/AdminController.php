@@ -29,6 +29,7 @@ class AdminController extends Controller
         return match ($name) {
             'activities' => ['' => '— Sin ficha —'] + Activity::orderBy('title')->pluck('title', 'id')->all(),
             'kinds' => Poster::KINDS,
+            'event_kinds' => \App\Models\CalendarEvent::KINDS,
             'months' => ['' => '— Sin mes —'] + Poster::monthOptions(),
             default => [],
         };
@@ -58,7 +59,9 @@ class AdminController extends Controller
         $c = $this->resource($key);
         $item = new $c['model'];
         // Valor de orden sugerido: al final de la lista
-        $item->sort = ((int) $c['model']::max('sort')) + 10;
+        if (\Illuminate\Support\Facades\Schema::hasColumn($item->getTable(), 'sort')) {
+            $item->sort = ((int) $c['model']::max('sort')) + 10;
+        }
 
         return view('admin.form', ['c' => $c, 'item' => $item, 'ctrl' => $this]);
     }
@@ -135,6 +138,8 @@ class AdminController extends Controller
                 } elseif ($request->boolean('remove_'.$name)) {
                     $data[$name] = null;
                 }
+            } elseif ($f['type'] === 'checkbox') {
+                $data[$name] = $request->boolean($name);
             } elseif ($f['type'] === 'number') {
                 $data[$name] = (int) ($data[$name] ?? 0);
             }

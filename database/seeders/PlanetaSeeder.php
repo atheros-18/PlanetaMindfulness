@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Activity;
+use App\Models\CalendarEvent;
 use App\Models\OnlineCard;
 use App\Models\Poster;
 use App\Models\ScheduleSlot;
@@ -16,6 +17,9 @@ class PlanetaSeeder extends Seeder
     {
         if (Activity::count() === 0) {
             $this->activities();
+        }
+        if (CalendarEvent::count() === 0) {
+            $this->calendar();
         }
         if (Poster::count() === 0) {
             $this->posters();
@@ -71,7 +75,7 @@ class PlanetaSeeder extends Seeder
             ['Mataelpino y Cerceda', 'Viernes por la mañana', 'Cerceda · Biodanza y Mindfulness', '11:15 – 12:15', 'mayores'],
         ];
         foreach ($slots as $i => [$sede, $day, $title, $time, $act]) {
-            ScheduleSlot::create(['sede' => $sede, 'day_label' => $day, 'title' => $title, 'time' => $time, 'activity_id' => $a[$act]->id, 'sort' => ($i + 1) * 10]);
+            ScheduleSlot::create(['sede' => $sede, 'day_label' => $day, 'title' => $title, 'time' => $time, 'activity_id' => $a[$act]->id, 'sort' => ($i + 1) * 10, 'in_calendar' => $act !== 'kaykal']);
         }
     }
 
@@ -93,6 +97,21 @@ class PlanetaSeeder extends Seeder
         }
     }
 
+    private function calendar(): void
+    {
+        $rows = [
+            ['2026-11-13', '2026-11-15', 'retiro', 'El arte de soltar', null, 'El Pagano · Arenas de San Pedro, Ávila'],
+            ['2026-11-21', null, 'taller', 'Vulnerabilidad', null, 'Sala Kaykal · Colmenar Viejo'],
+            ['2026-11-22', null, 'taller', 'Yoga, mindfulness y biodanza', null, null],
+            ['2026-11-27', null, 'taller', 'La gratitud', null, 'Vive Yoga · Colmenar Viejo'],
+            ['2026-12-13', null, 'taller', 'Sesión especial de Navidad', null, null],
+            ['2027-07-29', '2027-08-01', 'retiro', 'Verano para sentir', null, 'Málaga'],
+        ];
+        foreach ($rows as [$d, $e, $kind, $title, $time, $place]) {
+            CalendarEvent::create(['date' => $d, 'end_date' => $e, 'kind' => $kind, 'title' => $title, 'time' => $time, 'place' => $place]);
+        }
+    }
+
     private function online(): void
     {
         OnlineCard::create(['tag' => 'Para docentes', 'title' => 'Recursos de meditación para profesores', 'body' => 'Materiales y propuestas para enriquecer tus clases.', 'visual' => 'Docentes', 'sort' => 10]);
@@ -107,6 +126,7 @@ class PlanetaSeeder extends Seeder
             'social_whatsapp' => 'https://wa.me/34647752638',
             'social_insight' => 'https://insighttimer.com/',
             'banner_inicio' => 'img/banner-inicio.jpg',
+            'banner_calendario' => 'img/banner-pequeno.jpg',
             'banner_talleres' => 'img/banner-pequeno.jpg',
             'banner_carteles' => 'img/banner-pequeno.jpg',
             'banner_asociacion' => 'img/banner-pequeno.jpg',

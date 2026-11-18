@@ -5,6 +5,13 @@
         @case('textarea')
             <textarea id="f-{{ $name }}" name="{{ $name }}" rows="{{ $f['rows'] ?? 5 }}">{{ $val }}</textarea>
             @break
+        @case('date')
+            <input id="f-{{ $name }}" type="date" name="{{ $name }}" value="{{ $val instanceof \Carbon\Carbon ? $val->format('Y-m-d') : $val }}">
+            @break
+        @case('checkbox')
+            <input type="hidden" name="{{ $name }}" value="0">
+            <label class="adm-check ok"><input id="f-{{ $name }}" type="checkbox" name="{{ $name }}" value="1" @checked((bool) old($name, $value ?? true))> Sí</label>
+            @break
         @case('number')
             <input id="f-{{ $name }}" type="number" name="{{ $name }}" value="{{ $val }}">
             @break
