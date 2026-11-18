@@ -33,16 +33,47 @@ img{max-width:100%}
 .sitenav-links a::after{content:'';position:absolute;left:8px;right:8px;bottom:3px;height:8px;
   background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='8' viewBox='0 0 24 8'%3E%3Cpath d='M0 4 Q3 0.5 6 4 T12 4 T18 4 T24 4' fill='none' stroke='%235b2d7a' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x left center/24px 8px;
   clip-path:inset(0 100% 0 0);transition:clip-path .4s ease}
+/* la misma onda también ENCIMA del texto, pero solo en la página en la que estás */
+.sitenav-links a::before{content:'';position:absolute;left:8px;right:8px;top:2px;height:8px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='8' viewBox='0 0 24 8'%3E%3Cpath d='M0 4 Q3 0.5 6 4 T12 4 T18 4 T24 4' fill='none' stroke='%235b2d7a' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x left center/24px 8px;
+  clip-path:inset(0 100% 0 0);transition:clip-path .4s ease}
 .sitenav-links a:hover{color:var(--plum);transform:translateY(-2px) rotate(-1.5deg)}
 .sitenav-links a:nth-child(even):hover{transform:translateY(-2px) rotate(1.5deg)}
-.sitenav-links a:hover::after,.sitenav-links a.on::after{clip-path:inset(0 0 0 0)}
+/* al pasar el ratón: solo la onda de abajo · página activa: onda arriba y abajo */
+.sitenav-links a:hover::after,.sitenav-links a.on::after,.sitenav-links a.on::before{clip-path:inset(0 0 0 0)}
 .sitenav-links a.on{color:var(--plum);font-weight:700}
+
+/* Botón del menú desplegable (solo móvil y tablet) */
+.sitenav-toggle{display:none;align-items:center;gap:10px;font:700 15px var(--f-menu);color:var(--plum-dark);background:var(--paper);
+  border:2px solid var(--plum);border-radius:var(--hand);padding:8px 16px;cursor:pointer;box-shadow:3px 3px 0 var(--plum);
+  transition:transform .2s cubic-bezier(.3,1.7,.5,1),box-shadow .2s,background .2s}
+.sitenav-toggle:hover{background:var(--lilac)}
+.sitenav-toggle:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--plum)}
+.sitenav-toggle .bars{position:relative;display:block;width:20px;height:2px;border-radius:2px;background:currentColor;transition:background .2s}
+.sitenav-toggle .bars::before,.sitenav-toggle .bars::after{content:'';position:absolute;left:0;width:20px;height:2px;border-radius:2px;background:currentColor;transition:transform .25s ease}
+.sitenav-toggle .bars::before{top:-6px}.sitenav-toggle .bars::after{top:6px}
+.sitenav-toggle[aria-expanded="true"] .bars{background:transparent}
+.sitenav-toggle[aria-expanded="true"] .bars::before{transform:translateY(6px) rotate(45deg)}
+.sitenav-toggle[aria-expanded="true"] .bars::after{transform:translateY(-6px) rotate(-45deg)}
+
 @media(max-width:900px){
-  .sitenav{grid-template-columns:auto 1fr;grid-template-areas:"logo end" "links links"}
-  .sitenav-logo{grid-area:logo}.sitenav-end{grid-area:end}.sitenav-links{grid-area:links;padding-bottom:2px}
-  .sitenav-logo img{height:54px}
-  .sitenav-links a{padding:7px 9px 11px;font-size:14.5px}
+  .sitenav{grid-template-columns:auto 1fr;padding-top:5px;padding-bottom:5px}
+  .sitenav-end{justify-self:end}
+  .sitenav-toggle{display:inline-flex}
+  .sitenav-logo img{height:50px}
+  /* menú desplegable bajo la barra */
+  .sitenav-links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:0;
+    background:var(--paper);border-bottom:2px solid var(--lilac-2);box-shadow:0 18px 28px rgba(63,32,88,.14);
+    padding:6px var(--gutter,16px) 12px;max-height:calc(100vh - 70px);overflow-y:auto}
+  .sitenav.open .sitenav-links{display:flex;animation:navdrop .25s ease}
+  .sitenav-links a{padding:15px 8px 15px!important;font-size:17px!important;border-bottom:1px dashed var(--lilac-3);text-align:left}
+  .sitenav-links a:last-child{border-bottom:0}
+  .sitenav-links a::before{top:5px;left:8px;right:auto;width:110px}
+  .sitenav-links a::after{bottom:5px;left:8px;right:auto;width:110px}
+  .sitenav-links a:hover,.sitenav-links a:nth-child(even):hover{transform:none}
+  .sitenav-links a.on{background:var(--lilac);border-radius:10px;border-bottom-color:transparent}
 }
+@keyframes navdrop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 
 /* ---------- Tarjetas y bloques ---------- */
 .card,.group,.slide,.retreat,.past article,.online-card,.founders,.poster,.final-cta,.panel,.empty{
@@ -280,12 +311,3 @@ main{max-width:none!important;width:100%;margin:0!important;padding-left:var(--g
   .pcard{flex-basis:calc(100cqw * .8)!important}
 }
 
-/* Menú en móvil/tablet: compacto y sin quedarse fijo (no tapa la pantalla) */
-@media(max-width:900px){
-  .sitenav{position:static!important;padding-top:4px;padding-bottom:2px}
-}
-@media(max-width:700px){
-  .sitenav-links{gap:0 2px}
-  .sitenav-links a{padding:8px 8px 11px!important;font-size:13.5px!important}
-  .sitenav-logo img{height:48px!important}
-}

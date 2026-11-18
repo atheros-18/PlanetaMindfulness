@@ -32,12 +32,12 @@
     <a class="sitenav-logo" href="{{ url('/') }}" aria-label="Planeta Mindfulness · Inicio">
         <img src="{{ asset('img/logo.png') }}" alt="Planeta Mindfulness">
     </a>
-    <div class="sitenav-links">
+    <div class="sitenav-links" id="sitenav-links">
         @foreach ($menu as [$href, $label, $on])
             <a href="{{ url($href) }}" @class(['on' => $on]) @if($on) aria-current="page" @endif>{{ $label }}</a>
         @endforeach
     </div>
-    <span class="sitenav-end"></span>
+    <span class="sitenav-end"><button type="button" class="sitenav-toggle" aria-expanded="false" aria-controls="sitenav-links" aria-label="Abrir el menú"><span class="bars" aria-hidden="true"></span><span class="lbl">Menú</span></button></span>
 </div>
 
 @include('partials.banner')
@@ -63,6 +63,22 @@
         <span class="ver">{{ $version }}</span>
     </div>
 </div>
+<script>
+(function () {
+    var nav = document.querySelector('.sitenav'), btn = nav.querySelector('.sitenav-toggle');
+    function set(open) {
+        nav.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', open);
+        btn.setAttribute('aria-label', open ? 'Cerrar el menú' : 'Abrir el menú');
+        btn.querySelector('.lbl').textContent = open ? 'Cerrar' : 'Menú';
+    }
+    btn.addEventListener('click', function (e) { e.stopPropagation(); set(!nav.classList.contains('open')); });
+    document.addEventListener('click', function (e) { if (!nav.contains(e.target)) set(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
+    window.addEventListener('resize', function () { if (innerWidth > 900) set(false); });
+    nav.querySelectorAll('.sitenav-links a').forEach(function (a) { a.addEventListener('click', function () { set(false); }); });
+})();
+</script>
 @stack('scripts')
 </body>
 </html>
