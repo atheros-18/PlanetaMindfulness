@@ -4,6 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>@yield('title', 'Planeta Mindfulness')</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
+    <meta name="theme-color" content="#5b2d7a">
+    {{-- Tipografías: Quicksand (menú y botones), Lora (textos), Fraunces (títulos) --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
     @stack('styles')
     <link rel="stylesheet" href="{{ asset('css/site.css') }}">
 </head>
@@ -33,32 +42,21 @@
 @yield('content')
 
 <div class="site-footer" role="contentinfo">
-    <div class="site-footer-grid">
-        <div class="site-footer-brand">
-            <a href="{{ url('/') }}"><img class="site-footer-logo" src="{{ asset('img/logo-claro.png') }}" alt="Planeta Mindfulness"></a>
-            <p>Tu bienestar a través de la música, el movimiento y la atención plena.</p>
+    <div class="site-footer-row">
+        <a class="site-footer-logo" href="{{ url('/') }}" aria-label="Inicio"><img src="{{ asset('img/logo-claro.png') }}" alt="Planeta Mindfulness"></a>
+        <div class="site-footer-links">
+            @foreach ($menu as [$href, $label])
+                <a href="{{ url($href) }}">{{ $label }}</a>
+            @endforeach
         </div>
-        <div>
-            <h4>Explora</h4>
-            <ul>
-                @foreach ($menu as [$href, $label])
-                    <li><a href="{{ url($href) }}">{{ $label }}</a></li>
-                @endforeach
-            </ul>
-        </div>
-        <div>
-            <h4>Síguenos</h4>
-            <ul class="social">
-                @foreach (config('social') as $name => $item)
-                    @if (!empty($item['url']))
-                        <li><a href="{{ $item['url'] }}" target="_blank" rel="noopener noreferrer">{{ $item['label'] }}</a></li>
-                    @endif
-                @endforeach
-            </ul>
-        </div>
+        <ul class="social">
+            @foreach (\App\Models\Setting::socials() as $label => $url)
+                <li><a href="{{ $url }}" target="_blank" rel="noopener noreferrer">{{ $label }}</a></li>
+            @endforeach
+        </ul>
     </div>
     <div class="site-footer-bottom">
-        <span>© {{ date('Y') }} Planeta Mindfulness</span>
+        <span>© {{ date('Y') }} Planeta Mindfulness · Tu bienestar a través de la música, el movimiento y la atención plena</span>
         <span class="ver">{{ $version }}</span>
     </div>
 </div>

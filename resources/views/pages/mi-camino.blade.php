@@ -1,10 +1,21 @@
 @extends('layouts.app')
-@section('title', 'Mi camino | Planeta Mindfulness')
+@section('title', 'Mi camino · Planeta Mindfulness')
 @push('styles')
 <link rel="stylesheet" href="{{ asset('css/mi-camino.css') }}">
 @endpush
 @section('content')
-@verbatim
-<main><section class="hero"><div class="photo"><img src="/img/70d798c19d.jpg" alt="Paloma sentada junto a una escultura de Buda en un jardín de piedra"></div><div class="intro"><div class="eyebrow">Conóceme</div><h1>Mi camino</h1><p>Soy Paloma Cano y, desde niña, la música, el baile y el movimiento han formado parte de mi vida. Siempre he sentido esa conexión con el cuerpo y con la libertad de expresarme a mi manera.</p></div></section><article class="content"><p>En 1998 comencé a explorar el mundo del crecimiento personal a través del yoga. Después llegaron otras experiencias: los cinco ritmos, el <em>ecstatic dance</em>, yoga danza, la expresión corporal y la danza contemporánea. Cada una me fue acercando un poquito más a lo que buscaba.</p><p>Hasta que me encontré con la <strong>Biodanza</strong>. Y entonces comprendí que había llegado al lugar que llevaba tanto tiempo buscando.</p><hr class="separator"><p>En 2012 llegó otro descubrimiento importante a mi vida: el <strong>Mindfulness</strong>. Realicé un curso en la Universidad Complutense de Madrid con Gustavo Diex, de quien aprendí muchísimo. Desde entonces, la atención plena siempre ha estado presente en mis sesiones.</p><p>El Mindfulness nos ayuda a estar más presentes, a observar lo que sucede fuera y dentro de nosotros y a conectar con lo que sentimos. Por eso me gusta combinarlo con la Biodanza: <strong>la atención plena nos invita a detenernos y escuchar, mientras que la Biodanza nos permite expresar y vivir a través del movimiento</strong>.</p><p>Hoy, de todas las disciplinas que practico y comparto, la Biodanza ocupa un lugar muy especial en mi vida. Porque reúne todo aquello que siempre me ha apasionado: <strong>la música, el movimiento libre, la meditación, el encuentro con tus emociones, la expresión de ellas y el encuentro con los demás.</strong></p><p>Es una forma de estar dentro y fuera, de conectar contigo mism@ y abrirte al mundo. De sentir, expresar, compartir y, sobre todo, <strong>sentir que estás viv@</strong>.</p></article></main>
-@endverbatim
+@php use App\Models\Setting; @endphp
+<main>
+    <section class="hero">
+        @if ($foto = Setting::get('camino_foto'))
+            <div class="photo"><img src="{{ asset($foto) }}" alt="Paloma Cano"></div>
+        @endif
+        <div class="intro">
+            <div class="eyebrow">Conóceme</div>
+            <h1>{{ Setting::get('camino_titulo', 'Mi camino') }}</h1>
+            <p>{{ Setting::get('camino_intro') }}</p>
+        </div>
+    </section>
+    <article class="content">{!! Setting::rich(Setting::get('camino_cuerpo')) !!}</article>
+</main>
 @endsection
