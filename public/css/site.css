@@ -346,3 +346,21 @@ main{max-width:none!important;width:100%;margin:0!important;padding-left:var(--g
 
 /* Carteles: columna centrada de 1100 px para que los carteles no se estiren */
 .pg-carteles .hero,.pg-carteles section{max-width:1100px;margin-left:auto!important;margin-right:auto!important;width:100%}
+
+/* ---------- Página «Online»: tamaños contenidos ---------- */
+.pg-online .hero,.pg-online section{max-width:1100px;margin-left:auto!important;margin-right:auto!important;width:100%}
+.pg-online .hero{padding:30px 0 18px!important}
+.pg-online h1{font-size:clamp(30px,4vw,44px)!important;margin:6px 0 4px!important}
+.pg-online h2{font-size:clamp(24px,2.6vw,32px)!important;margin:6px 0 4px!important}
+.pg-online h3{font-size:21px!important;margin:6px 0!important}
+.pg-online p{margin:6px 0;line-height:1.6}
+.pg-online section{padding:30px 0!important}
+.pg-online .online-grid{gap:16px!important;margin-top:18px!important}
+.pg-online .online-visual{height:150px!important;font-size:30px!important}
+.pg-online .online-card img{height:240px!important;object-position:50% 14%!important}
+.pg-online .online-body{padding:18px 20px 20px!important}
+.pg-online .online-body .tag{margin-bottom:2px}
+@media(max-width:750px){
+  .pg-online .online-card img{height:auto!important;max-height:300px;object-position:50% 14%!important}
+  .pg-online .online-visual{height:110px!important}
+}

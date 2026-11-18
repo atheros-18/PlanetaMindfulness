@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('css/online.css') }}">
 @endpush
 @section('content')
-<main>
+<main class="pg-online">
     <div class="hero">
         <div class="eyebrow">Prácticas y aprendizaje a tu ritmo</div>
         <h1>Online</h1>
