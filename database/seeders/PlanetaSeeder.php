@@ -106,6 +106,12 @@ class PlanetaSeeder extends Seeder
         $defaults = [
             'social_whatsapp' => 'https://wa.me/34647752638',
             'social_insight' => 'https://insighttimer.com/',
+            'banner_inicio' => 'img/banner-inicio.jpg',
+            'banner_talleres' => 'img/banner-pequeno.jpg',
+            'banner_carteles' => 'img/banner-pequeno.jpg',
+            'banner_asociacion' => 'img/banner-pequeno.jpg',
+            'banner_online' => 'img/banner-pequeno.jpg',
+            'banner_camino' => 'img/banner-pequeno.jpg',
             'camino_foto' => 'img/70d798c19d.jpg',
             'camino_titulo' => 'Mi camino',
             'camino_intro' => 'Soy Paloma Cano y, desde niña, la música, el baile y el movimiento han formado parte de mi vida. Siempre he sentido esa conexión con el cuerpo y con la libertad de expresarme a mi manera.',
